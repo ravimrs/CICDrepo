@@ -29,7 +29,24 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-			</plugin>
+				<configuration>
+					 <deploymentType>cloudhub</deploymentType>
+					 <!-- muleVersion is the runtime version as it appears on the CloudHub interface -->
+					 <muleVersion>${mule.version}</muleVersion>
+					 <username>ravimrs21</username>
+					 <password>2OMravi#</password>
+					 <redeploy>true</redeploy>
+					 <environment>Sandbox</environment>
+					 <domain>${project.basedir}/domain</domain>
+				 </configuration>
+				<executions>
+					 <execution>
+						 <goals>
+						 	<goal>deploy</goal>
+						 </goals>
+					 </execution>
+				 </executions>
+			 </plugin>			
 		</plugins>
 	</build>
 
