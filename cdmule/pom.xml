@@ -30,15 +30,18 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					 <deploymentType>cloudhub</deploymentType>
-					 <!-- muleVersion is the runtime version as it appears on the CloudHub interface -->
-					 <muleVersion>${mule.version}</muleVersion>
-					 <username>ravimrs21</username>
-					 <password>2OMravi#</password>
-					 <redeploy>true</redeploy>
-					 <environment>Sandbox</environment>
-					 <domain>${project.basedir}/domain</domain>
-				 </configuration>
+					<cloudHubDeployment>
+					    <uri>https://anypoint.mulesoft.com</uri>
+					    <muleVersion>${mule.version}</muleVersion>
+					    <username>${anypoint.username}</username>
+					    <password>${anypoint.password}</password>
+					    <environment>${cloudhub.environment}</environment>
+					    <applicationName>${cloudhub.app}</applicationName>
+					    <businessGroup>${cloudhub.bg}</businessGroup>
+					    <workerType>${cloudhub.worker}</workerType>
+					    <objectStoreV2>true</objectStoreV2>
+					</cloudHubDeployment>
+				</configuration>
 				<executions>
 					 <execution>
 						 <goals>
